@@ -1,0 +1,35 @@
+{
+    "name": "insenseanalytics/laravel-telescope-pruning",
+    "description": "Pruning for Laravel Telescope.",
+    "keywords": [
+        "laravel",
+        "telescope",
+        "pruning",
+        "laravel telescope"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paras Malhotra",
+            "email": "paras@insenseanalytics.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^5.5",
+        "illuminate/database": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Insense\\LaravelTelescopePruning\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Insense\\LaravelTelescopePruning\\TelescopePruningServiceProvider"
+            ]
+        }
+    },
+    "prefer-stable": true
+}
