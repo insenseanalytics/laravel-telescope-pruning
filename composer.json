@@ -1,6 +1,6 @@
 {
     "name": "insenseanalytics/laravel-telescope-pruning",
-    "description": "Pruning for Laravel Telescope.",
+    "description": "Intelligently trim your Laravel Telescope entries.",
     "keywords": [
         "laravel",
         "telescope",
