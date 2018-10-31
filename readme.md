@@ -1,21 +1,18 @@
-# Insense/LaravelTelescopePruning
+# Laravel Telescope Pruning
 
-This package is created to ....
-
-## Basic Example
-
-```php
-...
-```
-
-## Requirements
-- [PHP >= 7.1](http://php.net/)
-- [Laravel 5.5|5.6|5.7](https://github.com/laravel/framework)
-- [Laravel Telescope](https://github.com/laravel/telescope)
+This package enables you to intelligently prune your Laravel Telescope entries. You may specify a cap on the number of batches (application cycles) of entries you need. You can also whitelist certain tags (or monitored tags) to avoid pruning them, or specify a separate pruning cap for whitelisted tags!
 
 ## Quick Installation
+Pull in the package using composer:
+
 ```bash
-$ composer require insenseanalytics/laravel-telescope-pruning
+composer require insenseanalytics/laravel-telescope-pruning
+```
+
+To copy the config to your app's config directory:
+
+```bash
+php artisan vendor:publish --provider="Insense\LaravelTelescopePruning\TelescopePruningServiceProvider"
 ```
 
 #### Service Provider (Optional / auto discovered on Laravel 5.5+)
@@ -26,6 +23,11 @@ Register provider on your `config/app.php` file.
     Insense\LaravelTelescopePruning\TelescopePruningServiceProvider::class,
 ]
 ```
+
+## Requirements
+- [PHP >= 7.1](http://php.net/)
+- [Laravel 5.7+](https://github.com/laravel/framework)
+- [Laravel Telescope](https://github.com/laravel/telescope)
 
 ## Contributing
 We are open to PRs as long as they're backed by tests and a small description of the feature added / problem solved.
