@@ -7,12 +7,11 @@ return [
      | Pruning Settings
      |--------------------------------------------------------------------------
      |
-     | Telescope pruning is enabled by default, when the environment is local.
-     | You can override the value by setting enabled to true/false instead.
+     | Telescope pruning is enabled by default. If you wish to enable only in
+     | production, set this value to null. Set to false to disable it.
      |
      */
-
-    'enabled' => env('TELESCOPE_PRUNING_ENABLED', null),
+    'enabled' => env('TELESCOPE_PRUNING_ENABLED', true),
 
     /*
     |--------------------------------------------------------------------------

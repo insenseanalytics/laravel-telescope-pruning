@@ -59,7 +59,8 @@ class PruneEntries
     protected function isEnabled()
     {
         if (is_null($this->config['enabled'])) {
-            return $this->app->environment('local');
+            // enable pruning in non-local environments
+            return !$this->app->environment('local');
         }
 
         return (bool) $this->config['enabled'];
