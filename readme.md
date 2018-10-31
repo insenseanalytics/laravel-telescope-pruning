@@ -16,7 +16,7 @@ php artisan vendor:publish --provider="Insense\LaravelTelescopePruning\Telescope
 ```
 
 #### Service Provider (Optional / auto discovered on Laravel 5.5+)
-Register provider on your `config/app.php` file.
+Register the provider in your `config/app.php` file:
 ```php
 'providers' => [
     ...,
