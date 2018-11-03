@@ -3,6 +3,7 @@
 namespace Insense\LaravelTelescopePruning;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Telescope\Telescope;
 
 class TelescopePruningServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,9 @@ class TelescopePruningServiceProvider extends ServiceProvider
         }
         
         $this->app->terminating(function () {
-            (new PruneEntries($this->app))->prune();
+            Telescope::withoutRecording(function() {
+                (new PruneEntries($this->app))->prune();
+            });
         });
     }
 
