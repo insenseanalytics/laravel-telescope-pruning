@@ -281,16 +281,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.11",
+            "version": "v5.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "52ee19c53c4fcd7fea8a83aacae5b8bc212ae19b"
+                "reference": "4cb5bf13e0cd50015f8e6a420a52fa8b90758eb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/52ee19c53c4fcd7fea8a83aacae5b8bc212ae19b",
-                "reference": "52ee19c53c4fcd7fea8a83aacae5b8bc212ae19b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4cb5bf13e0cd50015f8e6a420a52fa8b90758eb1",
+                "reference": "4cb5bf13e0cd50015f8e6a420a52fa8b90758eb1",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-10-24T12:50:20+00:00"
+            "time": "2018-10-30T14:44:34+00:00"
         },
         {
             "name": "laravel/telescope",
@@ -1632,16 +1632,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.9.0",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8"
+                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d0cd638f4634c16d8df4508e847f14e9e43168b8",
-                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/c79c051f5b3a46be09205c73b80b346e4153e494",
+                "reference": "c79c051f5b3a46be09205c73b80b346e4153e494",
                 "shasum": ""
             },
             "require": {
@@ -1687,7 +1687,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-09-21T13:07:52+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
