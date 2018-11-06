@@ -60,7 +60,7 @@ class PruneEntries
     {
         if (is_null($this->config['enabled'])) {
             // enable pruning in non-local environments
-            return !$this->app->environment('local');
+            return $this->app->environment('local');
         }
 
         return (bool) $this->config['enabled'];

@@ -5,6 +5,7 @@ namespace Insense\LaravelTelescopePruning\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Foundation\Application;
 use Insense\LaravelTelescopePruning\PruneEntries;
+use Laravel\Telescope\Telescope;
 
 class TrimCommand extends Command
 {
@@ -30,9 +31,11 @@ class TrimCommand extends Command
      */
     public function handle(Application $app)
     {
-        $numTrimmed = (new PruneEntries($app))->prune();
-        
-        $this->info($numTrimmed . ' entries trimmed.');
+        Telescope::withoutRecording(function () use($app) {
+            $numTrimmed = (new PruneEntries($app))->prune();
+
+            $this->info($numTrimmed . ' entries trimmed.');
+        });
     }
 }
 
