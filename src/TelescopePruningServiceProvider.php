@@ -4,7 +4,7 @@ namespace Insense\LaravelTelescopePruning;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Telescope\Telescope;
-use Insense\LaravelTelescopePruning\Commands\SchedulePruningEntryCommand;
+use Insense\LaravelTelescopePruning\Commands\TrimCommand;
 
 class TelescopePruningServiceProvider extends ServiceProvider
 {
@@ -59,7 +59,7 @@ class TelescopePruningServiceProvider extends ServiceProvider
      */
     protected function registerCommands() {
         $this->commands([
-            SchedulePruningEntryCommand::class,
+            TrimCommand::class,
         ]); 
     }
 }
