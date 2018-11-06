@@ -3,38 +3,36 @@
 namespace Insense\LaravelTelescopePruning\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Foundation\Application;
 use Insense\LaravelTelescopePruning\PruneEntries;
 
-class SchedulePruningEntryCommand extends Command
+class TrimCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'telescope:prune-scheduler';
+    protected $signature = 'telescope:trim';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Start pruning of entries from Telescope';
+    protected $description = 'Trim entries from the Telescope database';
 
     /**
      * Execute the console command.
      *
-     * @param  Illuminate\Foundation\Application  $app
+     * @param  Illuminate\Contracts\Foundation\Application  $app
      * @return void
      */
     public function handle(Application $app)
     {
-        $this->info('Telescope entries pruning started!');
+        $numTrimmed = (new PruneEntries($app))->prune();
         
-        (new PruneEntries($app))->prune();
-        
-        $this->info('Telescope entries pruning ende!');
+        $this->info($numTrimmed . ' entries trimmed.');
     }
 }
 

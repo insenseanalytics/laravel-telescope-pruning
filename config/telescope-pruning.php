@@ -14,6 +14,19 @@ return [
     'enabled' => env('TELESCOPE_PRUNING_ENABLED', true),
 
     /*
+     |--------------------------------------------------------------------------
+     | Every Request Pruning
+     |--------------------------------------------------------------------------
+     |
+     | By default, telescope pruning happens on every request. This does not
+     | impact the response time as pruning starts after the response has
+     | been sent. If you prefer to do this by scheduling a command, you
+     | may turn this off by setting it to false.
+     |
+     */
+    'every_request_pruning' => env('TELESCOPE_PRUNE_EVERY_REQUEST', true),
+
+    /*
     |--------------------------------------------------------------------------
     | Pruning Limit
     |--------------------------------------------------------------------------
@@ -24,8 +37,6 @@ return [
     |
     */
     'limit' => env('TELESCOPE_LIMIT', 100),
-    
-    'every_request_pruning' => true,
 
     /*
     |--------------------------------------------------------------------------

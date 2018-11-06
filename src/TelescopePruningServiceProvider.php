@@ -15,10 +15,11 @@ class TelescopePruningServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->registerPublishing();
+            $this->registerCommands();
             return;
         }
         
-        if(config("telescope-pruning.every_request_pruning", true)) {
+        if($this->app->config->get('telescope-pruning.every_request_pruning', true)) {
             $this->app->terminating(function () {
                 Telescope::withoutRecording(function() {
                     (new PruneEntries($this->app))->prune();
@@ -51,6 +52,11 @@ class TelescopePruningServiceProvider extends ServiceProvider
         ], 'telescope-pruning-config');
     }
     
+    /**
+     * Register the package's commands.
+     *
+     * @return void
+     */
     protected function registerCommands() {
         $this->commands([
             SchedulePruningEntryCommand::class,
