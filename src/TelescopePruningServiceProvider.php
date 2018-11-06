@@ -4,6 +4,7 @@ namespace Insense\LaravelTelescopePruning;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Telescope\Telescope;
+use Insense\LaravelTelescopePruning\Commands\SchedulePruningEntryCommand;
 
 class TelescopePruningServiceProvider extends ServiceProvider
 {
@@ -17,11 +18,13 @@ class TelescopePruningServiceProvider extends ServiceProvider
             return;
         }
         
-        $this->app->terminating(function () {
-            Telescope::withoutRecording(function() {
-                (new PruneEntries($this->app))->prune();
-            });
-        });
+        if(config("telescope-pruning.every_request_pruning", true)) {
+            $this->app->terminating(function () {
+                Telescope::withoutRecording(function() {
+                    (new PruneEntries($this->app))->prune();
+                });
+            });            
+        }
     }
 
     /**
@@ -33,6 +36,7 @@ class TelescopePruningServiceProvider extends ServiceProvider
             __DIR__.'/../config/telescope-pruning.php',
             'telescope-pruning'
         );
+    
     }
 
     /**
@@ -45,5 +49,11 @@ class TelescopePruningServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/telescope-pruning.php' => config_path('telescope-pruning.php'),
         ], 'telescope-pruning-config');
+    }
+    
+    protected function registerCommands() {
+        $this->commands([
+            SchedulePruningEntryCommand::class,
+        ]); 
     }
 }
