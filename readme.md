@@ -2,6 +2,7 @@
 
 [![Packagist License](https://poser.pugx.org/insenseanalytics/laravel-telescope-pruning/license.png)](http://choosealicense.com/licenses/mit/)
 [![Latest Stable Version](https://poser.pugx.org/insenseanalytics/laravel-telescope-pruning/version.png)](https://packagist.org/packages/insenseanalytics/laravel-telescope-pruning)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/insenseanalytics/laravel-telescope-pruning/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/insenseanalytics/laravel-telescope-pruning/?branch=master)
 [![Total Downloads](https://poser.pugx.org/insenseanalytics/laravel-telescope-pruning/d/total.png)](https://packagist.org/packages/insenseanalytics/laravel-telescope-pruning)
 
 This package enables you to intelligently prune your Laravel Telescope entries. You may specify a cap on the number of batches (application cycles) of entries you need. You can also whitelist certain tags (or monitored tags) to avoid pruning them, or specify a separate pruning cap for whitelisted tags!
